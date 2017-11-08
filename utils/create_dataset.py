@@ -30,7 +30,7 @@ df['accuracy.rate']=df['correct.answers']/df['total.answers']
 # Paste MS labels
 # ======================================================================================================
 
-df_labels = pd.read_csv('~/SDMT-Analysis/data/processed/mijn-kwik-users.csv', encoding="utf-8")
+df_labels = pd.read_csv('../data/processed/users.csv', encoding="utf-8")
 
 def create_labels(df_labels):#, df_measures):
     labels=[]
@@ -226,13 +226,13 @@ df_measures_users['distract_points'] = df_measures.groupby('userId').mean()['dis
 # How many MS patients in dataset
 print('Percentage of MS in Dataset: {} %'.format(round(df_measures_users['ms'].sum()/df_measures_users['ms'].count()*100)))
 
-df_measures_users.to_csv('~/SDMT-Analysis/data/interim/df_measures_users.csv', sep=',', encoding="utf-8")
+df_measures_users.to_csv('../data/interim/df_measures_users.csv', sep=',', encoding="utf-8")
 print('... Dataset df_measures_users.csv created')
 
-df_measures.to_csv('~/SDMT-Analysis/data/interim/df_measures.csv', sep=',', encoding="utf-8", index=False)
+df_measures.to_csv('../data/interim/df_measures.csv', sep=',', encoding="utf-8", index=False)
 print('... Dataset df_measures.csv created')
 
-df_symbols.to_csv('~/SDMT-Analysis/data/interim/df_symbols.csv', sep=',', encoding="utf-8", index=False)
+df_symbols.to_csv('../data/interim/df_symbols.csv', sep=',', encoding="utf-8", index=False)
 print('... Dataset df_symbols.csv created')
 
 

@@ -1,0 +1,10 @@
+click
+Sphinx
+coverage
+awscli
+flake8
+pandas
+numpy
+datetime
+scipy
+math

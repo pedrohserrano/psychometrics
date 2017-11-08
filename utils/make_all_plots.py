@@ -9,9 +9,9 @@ matplotlib.use('TkAgg')
 color_ms = '#386cb0' #blue, This is the color chosen for patients with Multiple Sclerosis
 color_hc = 'red'#This is the color chosen for health control participants
 
-df_measures = pd.read_csv('~/SDMT-Analysis/data/interim/df_measures.csv', encoding="utf-8")
-df_measures_users = pd.read_csv('~/SDMT-Analysis/data/interim/df_measures_users.csv', encoding="utf-8")
-df_symbols = pd.read_csv('~/SDMT-Analysis/data/interim/df_symbols.csv', encoding="utf-8")
+df_measures = pd.read_csv('../data/interim/df_measures.csv', encoding="utf-8")
+df_measures_users = pd.read_csv('../data/interim/df_measures_users.csv', encoding="utf-8")
+df_symbols = pd.read_csv('../data/interim/df_symbols.csv', encoding="utf-8")
 
 
 users = list(zip(df_measures_users['userId'], [color_ms if ms==1 else color_hc for ms in df_measures_users['ms']]))
@@ -50,8 +50,8 @@ for user in users:
 
 	plt.tight_layout()
 	figname = 'user_{}.png'.format(user[0])
-	dest = os.path.join('~/SDMT-Analysis/reports/time_response_png/', figname)
+	dest = os.path.join('../reports/time_response_png/', figname)
 	plt.savefig(dest)
-	#plt.savefig('~/SDMT-Analysis/reports/time_response_svg/user_'+user[0]+'.svg')
-	#plt.savefig('~/SDMT-Analysis/reports/time_response_png/user_'+user[0]+'.png')
+	#plt.savefig('../reports/time_response_svg/user_'+user[0]+'.svg')
+	#plt.savefig('../reports/time_response_png/user_'+user[0]+'.png')
 	plt.cla()

@@ -17,8 +17,8 @@ import sys
 # Loading data 
 # ======================================================================================================
 try:
-    df_measures = pd.read_csv('~/SDMT-Analysis/data/interim/df_measures.csv', encoding="utf-8")
-    df_measures_users = pd.read_csv('~/SDMT-Analysis/data/interim/df_measures_users.csv', encoding="utf-8")
+    df_measures = pd.read_csv('../data/interim/df_measures.csv', encoding="utf-8")
+    df_measures_users = pd.read_csv('../data/interim/df_measures_users.csv', encoding="utf-8")
 except IOError as err:
     print("I/O error: {0}".format(err))
     raise
@@ -63,6 +63,6 @@ print('Number of tests performed: {}'.format(number_tests))
 print('Score measure: {}'.format(var_score))
 
 # Saving data
-df_scores.to_csv('~/SDMT-Analysis/data/interim/'+name+'.csv', sep=',', encoding="utf-8", index=False)
+df_scores.to_csv('../data/interim/'+name+'.csv', sep=',', encoding="utf-8", index=False)
 print('... Dataset '+name+'.csv created')
 
